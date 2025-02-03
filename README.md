@@ -1,1 +1,1 @@
-# Proyecto-Digitalizaci-n-2-trimestre
+# Proyecto-Digi-2-trimestre
