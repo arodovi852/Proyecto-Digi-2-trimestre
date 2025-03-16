@@ -8,7 +8,7 @@ En principio, los vídeos serán almacenados en una base de datos junto a mensaj
 Cada viernes a las 21:00 (hora peninsular) escogerá un vídeo aleatorio para subirlo a Twitter junto a su texto correspondiente que se eliminará de la base de datos. De esta forma, el usuario solo tendrá que añadir el vídeo y el texto opcional acompañante a su respectiva base de datos en vez de tener que manualmente subirlo cada vídeo a Twitter.
 
 ## Idea final
-Debido a las limitaciones de las versiones gratuitas del portal de desarrolladores de Twitter, la idea acabó sustituyéndose por un bot de Discord donde se puede almacenar tareas en una lista de tareas pendientes y, a su vez, se puede comenzar un "tiempo de trabajo" donde se estará realizando la entrega, donde esta podrá ser terminada o, en casa no ser acabada, postpuesta para otro momento.
+Debido a las limitaciones de las versiones gratuitas del portal de desarrolladores de Twitter, la idea acabó sustituyéndose por un **bot organizador tareas de Discord**, donde se pueden almacenar tareas en una lista para marcarlas como pendientes y eliminarlas posteriormente y, a su vez, se puede comenzar un "tiempo de trabajo", donde habrá un seguimiento del tiempo trabajado y cada media hora el usuario recibirá una notificación para que tome un pequeño descanso.
 
 ## Uso del bot
 Como el bot actualmente funciona en local, hay que seguir unos pasos antes de poder probar el bot.
@@ -24,27 +24,27 @@ Si por casualidad no aparece alguno instalado, vuélvelo a instalar con esos com
 Ahora sí, para utilizar del bot, es necesario seguir los siguientes pasos:
 
 - **Paso 1:** Entrar a un servidor de Discord donde tengas permisos de administrador.
-- 
+ 
 ![alt text](img/image.png)
 
 - **Paso 2:** Ir a ajustes de usuario.
-- 
+ 
 ![alt text](img/image-2.png)
 
 - **Paso 3:** Bajar hasta App Settings y Advanced.
-- 
+ 
 ![alt text](img/image-3.png)
 
 - **Paso 4:** Activar Developer Mode. Esto te permitirá utilizar el bot correctamente.
-- 
+ 
 ![alt text](img/image-4.png)
 
 - **Paso 5:** Volviendo al servidor, entrar en un canal donde se desee usar el bot. Aquí se copiará su ID.
-- 
+
 ![alt text](img/image-6.png)
 
 - **Paso 6:** Pegar tu ID en la variable CHANNEL_ID:
-- 
+
 ![alt text](img/image-8.png)
  Es importante **no pegarlo entre comillas**, ya que debe de ser un entero para que el bot funcione correctamente:
 
