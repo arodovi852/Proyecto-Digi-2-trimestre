@@ -49,12 +49,11 @@ Ciclo de vida del dato (5b):
     ¿Cómo se gestionan los datos desde su generación hasta su eliminación en tu proyecto?
 
     Los datos se almacenan temporalmente en variables que más adelante se almacenan en un JSON para poder almacenar información a largo plazo.
-
-
-    Todos los datos son almacenados en un JSON, el cual conserva información mientras el bot esté activo.
-
+    https://github.com/arodovi852/Proyecto-Digi-2-trimestre/blob/38aaf2c5a109bba0b410965f6456c40287413881/myenv/bot.py#L104-L115
+    
     ¿Qué estrategia sigues para garantizar la consistencia e integridad de los datos?
     Todos los datos son almacenados en un JSON, ya que gracias a la naturaleza del JSON, la información se mantendrá guardada hasta que el usuario lo desee. Esto se realiza a través de funciones o comandos especiales donde el usuario introduce el nombre de una tarea que desee almacenar o, alternativamente, eliminar en caso de que exista.
+    https://github.com/arodovi852/Proyecto-Digi-2-trimestre/blob/38aaf2c5a109bba0b410965f6456c40287413881/myenv/bot.py#L124-L140
 
 
     Si no trabajas con datos, ¿cómo podrías incluir una funcionalidad que los gestione de forma eficiente?
@@ -78,6 +77,7 @@ Seguridad y regulación (5i):
     ¿Qué medidas de seguridad implementaste para proteger los datos o procesos en tu proyecto?
 
     Para proteger los datos más comprometidos como el token del bot, estos fueron almacenados en archivos separados, como en el caso del token, que fue guardado en un archivo dotenv, de forma que el token queda almacenado y no está directamente en el código.
+    https://github.com/arodovi852/Proyecto-Digi-2-trimestre/blob/38aaf2c5a109bba0b410965f6456c40287413881/myenv/.env#L1
     
     ¿Qué normativas (e.g., GDPR) podrían afectar el uso de tu software y cómo las has tenido en cuenta?
     
