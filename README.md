@@ -25,30 +25,30 @@ Ahora sí, para utilizar del bot, es necesario seguir los siguientes pasos:
 
 - **Paso 1:** Entrar a un servidor de Discord donde tengas permisos de administrador.
 - 
-![alt text](image.png)
+![alt text](img/image.png)
 
 - **Paso 2:** Ir a ajustes de usuario.
 - 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 - **Paso 3:** Bajar hasta App Settings y Advanced.
 - 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 - **Paso 4:** Activar Developer Mode. Esto te permitirá utilizar el bot correctamente.
 - 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 - **Paso 5:** Volviendo al servidor, entrar en un canal donde se desee usar el bot. Aquí se copiará su ID.
 - 
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
 - **Paso 6:** Pegar tu ID en la variable CHANNEL_ID:
 - 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
  Es importante **no pegarlo entre comillas**, ya que debe de ser un entero para que el bot funcione correctamente:
 
-![alt text](image-9.png)
+![alt text](img/image-9.png)
 
 ## Respuestas a las preguntas
 Ciclo de vida del dato (5b):
