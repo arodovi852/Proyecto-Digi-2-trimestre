@@ -1,3 +1,0 @@
-Pega el código en el .txt TAL Y COMO ESTÁ (no hace falta que esté entre comillas)
-
-DISCORD_TOKEN = MTM1MDIxMjM3MDM1NzU1NTI5Mw.G-fwyF.VAAOcjrqI-9ONVYN9G9x7DusNT3TiFwjE_Nfkg
