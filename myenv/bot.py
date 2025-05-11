@@ -13,7 +13,7 @@ from responses import get_response
 
 load_dotenv()
 BOT_TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
-#Desde Discord, introduce el ID del servidor en CHANNEL_ID. Para más información sobre esto, consultado la documentación.
+#Put the Channel_ID here. For more info, check the documentation.
 CHANNEL_ID = 1350811849137983630
 
 
@@ -32,7 +32,7 @@ client: Client = Client(intents=intents)
 
 async def send_message(message: Message, user_message: str) -> None:
     if not user_message:
-        print("Mensaje vacío")
+        print("Empty message")
         return
     if is_private := user_message[0] == '?':
         user_message=user_message[1:]
@@ -45,7 +45,7 @@ async def send_message(message: Message, user_message: str) -> None:
 
 @client.event
 async def on_ready():
-    print(f"{client.user} funcionando correctamente.")
+    print(f"{client.user} working as intended.")
 
 
 @client.event
@@ -59,47 +59,47 @@ async def on_message(message: Message) -> None:
 
 @bot.event
 async def on_ready():
-    print("¡Buenas! El bot de organización de tareas está listo")
+    print("Welcome! The Discord Work Management bot is ready.")
     channel = bot.get_channel(CHANNEL_ID)
-    await channel.send("¡Buenas! El bot de organización de tareas está listo. Escribe !commands para ver la lista de comandos.")
+    await channel.send("Welcome! The Discord Work Management bot is ready. Type !commands to see the list of commands.")
 
     
-@tasks.loop(minutes=MAX_SESSION_MINUTES, count=10)
+@tasks.loop(minutes=MAX_SESSION_MINUTES, count=20)
 async def break_reminder():
     if break_reminder.current_loop == 0:
         return
     channel = bot.get_channel(CHANNEL_ID)
-    await channel.send(f"**Tómate un descanso**, llevas trabajando {MAX_SESSION_MINUTES} minutos.")
+    await channel.send(f"**Take a break**, you've been working for {MAX_SESSION_MINUTES} minutes.")
 
 
 @bot.command()
 async def commands(ctx):
-    lista_de_comandos = "!start - Comienza una sesión de trabajo.\n!end - Finaliza una sesión de trabajo.\n!add _tarea_ - Añade una tarea a la lista de tareas.\n!endtask _tarea_ - Finaliza la tarea deseada.\n!list - Muestra una lista con todas las tareas.\n!clear - Elimina todas las tareas de la lista de tareas."
-    await ctx.send(f"Lista de comandos:\n{lista_de_comandos}")
+    lista_de_comandos = "!start - Starts a new work session.\n!end - Ends an on-going work session.\n!add _task_ - Adds a task to the tasklist.\n!endtask _task_ - Ends the selected task.\n!list - Shows a list with every task.\n!clear - Deletes all saved tasks."
+    await ctx.send(f"List of commands:\n{lista_de_comandos}")
 
 @bot.command()    
 async def start(ctx):
     if session.is_active:
-        await ctx.send("Ya hay una sesión activa.")
+        await ctx.send("There's an on-going session already. Close the session with !end to start a new one.")
         return
     session.is_active = True
     session.start_time = ctx.message.created_at.timestamp()  
     human_time = ctx.message.created_at.strftime("%H:%M:%S")
     break_reminder.start()  
-    await ctx.send(f"Sesión de trabajo comenzada a las {human_time}")
+    await ctx.send(f"Work session started at {human_time}")
 
 
 @bot.command()
 async def end(ctx):
     if not session.is_active:
-        await ctx.send("No hay ninguna sesión activa.")
+        await ctx.send("There aren't any active sessions.")
         return
     session.is_active = False
     end_time = ctx.message.created_at.timestamp()
     duration = end_time - session.start_time  
     human_duration = str(datetime.timedelta(seconds=duration))  
     break_reminder.stop()
-    await ctx.send(f"Sesión de trabajo comenzada a las {human_duration}.")
+    await ctx.send(f"Work session lasted: {human_duration}.")
 
 @bot.command()
 async def add(ctx, tarea):
@@ -112,14 +112,14 @@ async def add(ctx, tarea):
         with open("data.json", "w") as f:
             json.dump(data, f)
     f.close()
-    await ctx.send(f'Tarea "{tarea}" añadida a la lista de tareas')
+    await ctx.send(f'Task "{tarea}" added to the list of tasks')
     
 @bot.command()
 async def list(ctx):
     with open('data.json', 'r') as file:
         data = json.load(file)
     file.close()
-    await ctx.send(f"La lista de tareas actual es: {data}")
+    await ctx.send(f"The current list of tasks is: {data}")
     
 @bot.command()
 async def endtask(ctx, tarea):
@@ -137,7 +137,7 @@ async def endtask(ctx, tarea):
         with open("data.json", "w") as f:
             json.dump(data, f)
     f.close()
-    await ctx.send(f'Tarea "{tarea}" completada')
+    await ctx.send(f'Task "{tarea}" completed')
     
 @bot.command()
 async def clear(ctx):
@@ -149,7 +149,7 @@ async def clear(ctx):
         with open("data.json", "w") as f:
             json.dump(data, f)
     f.close()
-    await ctx.send(f'Datos eliminados exitosamente')
+    await ctx.send(f'Data deleted successfully')
             
     
 bot.run(BOT_TOKEN)

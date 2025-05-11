@@ -46,7 +46,8 @@ Ahora sí, para utilizar del bot, es necesario seguir los siguientes pasos:
 - **Paso 6:** Pegar tu ID en la variable CHANNEL_ID:
 
 ![alt text](img/image-8.png)
- Es importante **no pegarlo entre comillas**, ya que debe de ser un entero para que el bot funcione correctamente:
+
+Es importante **no pegarlo entre comillas**, ya que debe de ser un entero para que el bot funcione correctamente:
 
 ![alt text](img/image-9.png)
 
