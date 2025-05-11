@@ -1,150 +1,75 @@
-# Proyecto-Digi-2-trimestre
-## Idea inicial
-Para este proyecto he decidido desarrollar un programa/plugin para automatizar la subida de vídeos a Twitter, una especie de bot con el propósito de facilitar en específico el ámbito del marketing
-de los videojuegos indie a través de la subido de contenido y clips diversos del juego, ya que esta suele ser una de las partes más tediosas del desarrollo de juegos.
+# Discord Word Management Bot
+## Tutorial video - How the bot works and its commands
+<video controls src="img/2025-05-11 19-18-24.mp4" title="Title"></video>
 
-En principio, los vídeos serán almacenados en una base de datos junto a mensajes opcionales que acompañarán al tweet como descripción de este. Esta podrá ser modificada en cualquier momento añadiendo nuevos clips o eliminando ciertos vídeos que quedaron obsoletos.
 
-Cada viernes a las 21:00 (hora peninsular) escogerá un vídeo aleatorio para subirlo a Twitter junto a su texto correspondiente que se eliminará de la base de datos. De esta forma, el usuario solo tendrá que añadir el vídeo y el texto opcional acompañante a su respectiva base de datos en vez de tener que manualmente subirlo cada vídeo a Twitter.
+## Requirements
+The bot works locally, so you need to follow these instructions:
 
-## Idea final
-Debido a las limitaciones de las versiones gratuitas del portal de desarrolladores de Twitter, la idea acabó sustituyéndose por un **bot organizador tareas de Discord**, donde se pueden almacenar tareas en una lista para marcarlas como pendientes y eliminarlas posteriormente y, a su vez, se puede comenzar un "tiempo de trabajo", donde habrá un seguimiento del tiempo trabajado y cada media hora el usuario recibirá una notificación para que tome un pequeño descanso.
-
-## Uso del bot
-Como el bot actualmente funciona en local, hay que seguir unos pasos antes de poder probar el bot.
-
-Aunque no sea necesario, dentro de este entorno ya se instalaron discord.py y python-dotenv para el funcionamiento a través de:
+It's not mandatory but it's recommended to install the following from the terminal:
 
     pip install discord.py
     
     pip install python-dotenv
 
-Si por casualidad no aparece alguno instalado, vuélvelo a instalar con esos comandos.
+It's only really necessary if either one doesn't appear as installed.
 
-Ahora sí, para utilizar del bot, es necesario seguir los siguientes pasos:
+Now onto the bot's features (in written form):
 
-- **Paso 1:** Entrar a un servidor de Discord donde tengas permisos de administrador.
+## Steps to follow
+
+- **Step 1:** Enter a Discord server where you're admin.
  
 ![alt text](img/image.png)
 
-- **Paso 2:** Ir a ajustes de usuario.
+- **Step 2:** Go to user settings.
  
 ![alt text](img/image-2.png)
 
-- **Paso 3:** Bajar hasta App Settings y Advanced.
+- **Step 3:** Go to App Settings y Advanced.
  
 ![alt text](img/image-3.png)
 
-- **Paso 4:** Activar Developer Mode. Esto te permitirá utilizar el bot correctamente.
+- **Step 4:** Turn on Developer Mode. This will allow you to use the bot.
  
 ![alt text](img/image-4.png)
 
-- **Paso 5:** Volviendo al servidor, entrar en un canal donde se desee usar el bot. Aquí se copiará su ID.
+- **Step 5:** Going back to the server, enter the channel where you want to use your bot. You will copy its ID here.
 
 ![alt text](img/image-6.png)
 
-- **Paso 6:** Pegar tu ID en la variable CHANNEL_ID:
+- **Step 6:** Paste your ID on CHANNEL_ID:
 
 ![alt text](img/image-8.png)
 
-Es importante **no pegarlo entre comillas**, ya que debe de ser un entero para que el bot funcione correctamente:
+Remember to **paste it normally**, the variable must be an integer for the bot to work:
 
 ![alt text](img/image-9.png)
 
-## Respuestas a las preguntas
-Ciclo de vida del dato (5b):
+And now, you should be able to run the bot by pressing the run button on VSCode!
 
-    ¿Cómo se gestionan los datos desde su generación hasta su eliminación en tu proyecto?
+## Devlog
+At the very start of the project, the most important part took place: Brainstorming. Lots of ideas were thrown out, but the one that
+stuck out the most was the idea of a bot that could automatically do tasks for you. This idea would later become a Twitter bot.
 
-    Los datos se almacenan temporalmente en variables que más adelante se almacenan en un JSON para poder almacenar información a largo plazo.
-    https://github.com/arodovi852/Proyecto-Digi-2-trimestre/blob/38aaf2c5a109bba0b410965f6456c40287413881/myenv/bot.py#L104-L115
-    
-    ¿Qué estrategia sigues para garantizar la consistencia e integridad de los datos?
-    Todos los datos son almacenados en un JSON, ya que gracias a la naturaleza del JSON, la información se mantendrá guardada hasta que el usuario lo desee. Esto se realiza a través de funciones o comandos especiales donde el usuario introduce el nombre de una tarea que desee almacenar o, alternativamente, eliminar en caso de que exista.
-    https://github.com/arodovi852/Proyecto-Digi-2-trimestre/blob/38aaf2c5a109bba0b410965f6456c40287413881/myenv/bot.py#L124-L140
+This idea was further developed into a bot that would automatize posts pulling data from an excel sheet, and since it was mainly being created with the intent of helping with annoying tasks, the idea of marketing and making the process of posting content on social media much easier arose.
 
+Now, the issue with this particular idea was that, while very straightforward came with the complexities of Twitter's developer portal, which while usable it could be very limited at that. This lead to the idea being scrapped.
 
-    Si no trabajas con datos, ¿cómo podrías incluir una funcionalidad que los gestione de forma eficiente?
+However, the bot still seemed like a good idea, and since lots of people use Discord for work the bot was now repurposed to 
 
+This way, after following some YouTube tutorials and reading a lot of Discord's documentation, progress was made and lots of functionalities were created.
 
-Almacenamiento en la nube (5f):
+Since the main purpose of this bot was to organize, there needed to be some functionalities that fit into this. This is when the work session was created. Work sessions would allow users to keep track of their time and be reminded every once in a while to take a break, which was settled in 30 minutes after some consideration.
 
-    Si tu software utiliza almacenamiento en la nube, ¿cómo garantizas la seguridad y disponibilidad de los datos?
+However, this was too simple, so another feature was added: Saving and deleting tasks from a list. Things went smooth when it came to coding them, but the biggest roadblock was actually figuring out how to go about inserting data into the list, since it was a difficult decision. The final result shows the following format: 
 
-    El proyecto no llegó a utilizar almacenamiento en la nube.
+    "Task: (taskname)"
 
-    ¿Qué alternativas consideraste para almacenar datos y por qué elegiste tu solución actual?
+Additionally, there was a lot of testing done surrounding the delete command, since the format of the list kept changing throughout the bot's history. This is also when the final functionality was created: Clear. By clearing tasks from the list, they list would be fully depleted from any tasks, which came in handy specially during testing.
 
-    La forma de almacenar datos del proyecto fue a través de un archivo JSON, donde se guardan las tareas que el usuario decide almacenar con el comando add(). Esto se debe a que el JSON ofrece una transferencia de datos rápida y, debido a que no es un bot que tenga en mente el manejo de grandes cantidades de datos, es la opción perfecta para almacenar información de manera ordenada sobre otras opciones como, por ejemplo, un archivo .txt.
+And as the time of writing this, that's everything about the bot so far. It might get some additional functionalities in the future that weren't included, but for now this is the first version of the product.
 
-    Si no usas la nube, ¿cómo podrías integrarla en futuras versiones?
-    La manera más fácil de almacenar datos en la nube sería un servidor a través de AWS Lambda, que permite no solo subir el bot a internet para que otra gente pueda utilizarlo sino que también permite un mayor manejo de los datos. Sin embargo, esta opción es de pago, por lo que sería una implementación para un futuro.
-
-Seguridad y regulación (5i):
-
-    ¿Qué medidas de seguridad implementaste para proteger los datos o procesos en tu proyecto?
-
-    Para proteger los datos más comprometidos como el token del bot, estos fueron almacenados en archivos separados, como en el caso del token, que fue guardado en un archivo dotenv, de forma que el token queda almacenado y no está directamente en el código.
-    https://github.com/arodovi852/Proyecto-Digi-2-trimestre/blob/38aaf2c5a109bba0b410965f6456c40287413881/myenv/.env#L1
-    
-    ¿Qué normativas (e.g., GDPR) podrían afectar el uso de tu software y cómo las has tenido en cuenta?
-    
-    Como el bot no toma información personal más allá de leer los comandos que el usuario introduce, el bot cumple con absolutamente todas las normativas de los principios de protección de datos, como por ejemplo:
-    - La minimización de datos personales, guardando solo las tareas que el usuario escriba en el JSON.
-    - La transparencia, mostrándole al usuario la información que ha introducido y que puede eliminar si desea.
-    - El límite de propósito, ya que la información solo es utilizada dentro del bot para guardar las tareas.
-    - La precisión, que el propio usuario es capaz de controlar con los comandos.
-    - El límite de espacio, que viene dato por las capacidades del JSON y puede ser controlado con los comandos endtask() y clear()
-
-
-    Si no implementaste medidas de seguridad, ¿qué riesgos potenciales identificas y cómo los abordarías en el futuro?
-
-
-
-Implicación de las THD en negocio y planta (2e):
-
-    ¿Qué impacto tendría tu software en un entorno de negocio o en una planta industrial?
-
-    En sitios donde la comunicación se lleve a cabo mediante servidores de discord puede ser bastante útil, ya que solo se necesita llamar a los comandos necesarios para poder trabajar con ellos. Además, como aplicación para administrar tareas de una forma más fácil puede ayudar, por ejemplo, durante reuniones de trabajo donde sea necesario llevar un seguimiento de las tareas necesarias.
-
-    Sin embargo, al ser un proyecto de almacenamiento de datos a pequeña escala, esto tampoco podría utilizarse para tareas grandes, sino más bien tareas más específicas y puntuales como por ejemplo, las tareas a realizar durante un singular día de trabajo tras una reunión de trabajo por Discord.
-    
-    ¿Cómo crees que tu solución podría mejorar procesos operativos o la toma de decisiones?
-
-    Facilitaría la administración de tareas en una aplicación que es ya de por sí bastante utilizada en ambientes laborales, permitiendo a los trabajadores organizarse más fácilmente.
-    
-    
-    Si tu proyecto no aplica directamente a negocio o planta, ¿qué otros entornos podrían beneficiarse?
-
-
-Mejoras en IT y OT (2f):
-
-    ¿Cómo puede tu software facilitar la integración entre entornos IT y OT?
-    
-    El programa podría reemplazar el consumo de post-its tradicional en las empresas por el bot, ya que cumplen el mismo propósito pero el bot es mucho más rápido de manejar, más accesible directamente y no consume papel como lo hace el post-it. Además, su uso conllevaría un incremento en el uso de Discord, por lo que esto podría también considerarse parte de un proceso de digitalización, puesto que las reuniones de trabajo podrían llevarse a cabo por remoto desde la aplicación de Discord.
-
-
-    ¿Qué procesos específicos podrían beneficiarse de tu solución en términos de automatización o eficiencia?
-
-    Debido a su naturaleza general, cualquier trabajo podría beneficiarse del bot organizador de tareas, pero aquellos que trabajen por remoto y ya utilicen Discord de por sí serían los que más ganasen del bot, como todas las ramas de informática.
-
-
-    Si no aplica a IT u OT, ¿cómo podrías adaptarlo para mejorar procesos tecnológicos concretos?
-
-Tecnologías Habilitadoras Digitales (2g):
-
-    ¿Qué tecnologías habilitadoras digitales (THD) has utilizado o podrías integrar en tu proyecto?
-    
-    La tecnología más fácil de integrar en el proyecto sería, en caso de necesitar almacenar más información en proyectos de mayor escala, un conjunto entre la nube y big data para el almacenamiento y procesamiento de grandes cantidades datos.
-
-    Sin embargo, la IA sería otra opción bastante interesante, ya que esta podría atender a los usuarios para responder dudas puntuales o incluso dar formas de mejorar la organización de tareas, ya que proyecto se basa en esa idea.
-
-
-    ¿Cómo mejoran estas tecnologías la funcionalidad o el alcance de tu software?
-    
-    A pesar de que ninguna fue implementada, la nube y big data podrían permitir que el bot se utilizado a una mayor escala, no teniendo que depender de las capacidades limitadas del JSON.
-
-
-    Si no has utilizado THD, ¿cómo podrías implementarlas para enriquecer tu solución?
-    
-    La nube y big data podrían implementarse a través de servidores ya existentes online (a pesar de estar disponibles a partir de un cierto precio) y la IA sería especialmente interesante de implementar debido a las posibilidades que aporta a los comandos del propio bot.
+The bot was going to be initially going to be a Twitter bot instead, however while developing the project 
+Para este proyecto he decidido desarrollar un programa/plugin para automatizar la subida de vídeos a Twitter, una especie de bot con el propósito de facilitar en específico el ámbito del marketing
+de los videojuegos indie a través de la subido de contenido y clips diversos del juego, ya que esta suele ser una de las partes más tediosas del desarrollo de juegos.

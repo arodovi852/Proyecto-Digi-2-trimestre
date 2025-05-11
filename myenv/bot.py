@@ -107,7 +107,7 @@ async def add(ctx, tarea):
     with open("data.json", "r") as f:
         data = json.load(f)
 
-        data.append({"tarea": tarea})
+        data.append({"Task": tarea})
 
         with open("data.json", "w") as f:
             json.dump(data, f)
