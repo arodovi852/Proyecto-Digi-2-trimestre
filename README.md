@@ -1,7 +1,7 @@
 # Discord Word Management Bot
 ## Tutorial video - How the bot works and its commands
 <video controls src="img/2025-05-11 19-18-24.mp4" title="Title"></video>
-
+https://drive.google.com/file/d/1vvzPlXb-AHHhY49-gEQ9EwH89Nk3TfWE/view?usp=sharing
 
 ## Requirements
 The bot works locally, so you need to follow these instructions:
