@@ -69,7 +69,3 @@ However, this was too simple, so another feature was added: Saving and deleting 
 Additionally, there was a lot of testing done surrounding the delete command, since the format of the list kept changing throughout the bot's history. This is also when the final functionality was created: Clear. By clearing tasks from the list, they list would be fully depleted from any tasks, which came in handy specially during testing.
 
 And as the time of writing this, that's everything about the bot so far. It might get some additional functionalities in the future that weren't included, but for now this is the first version of the product.
-
-The bot was going to be initially going to be a Twitter bot instead, however while developing the project 
-Para este proyecto he decidido desarrollar un programa/plugin para automatizar la subida de vídeos a Twitter, una especie de bot con el propósito de facilitar en específico el ámbito del marketing
-de los videojuegos indie a través de la subido de contenido y clips diversos del juego, ya que esta suele ser una de las partes más tediosas del desarrollo de juegos.
